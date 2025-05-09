@@ -6,43 +6,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Index - PrintVision</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      font-family: Arial, sans-serif;
       background-color: #f4f4f4;
       color: #333;
-    }
-    header {
-      background-color: #1f1f2e;
-      color: #fff;
-      padding: 2.5rem 1rem;
-      text-align: center;
-      animation: fadeIn 1s ease-in;
-    }
-    header h1 {
-      font-size: 2.5rem;
-    }
-    header p {
-      font-size: 1.1rem;
-      opacity: 0.8;
     }
     nav {
       display: flex;
       justify-content: center;
+      gap: 2rem;
       background-color: #2a2a3d;
       padding: 1rem;
-      gap: 2rem;
-      animation: slideDown 0.5s ease-out;
     }
     nav a {
       color: #fff;
       text-decoration: none;
       font-weight: bold;
-      transition: color 0.3s ease;
     }
     nav a:hover {
       color: #00d0ff;
@@ -51,7 +31,6 @@
       max-width: 900px;
       margin: 2rem auto;
       padding: 0 1rem;
-      animation: fadeIn 0.8s ease-in;
     }
     h2 {
       margin-bottom: 1rem;
@@ -60,8 +39,7 @@
     }
     p {
       margin-bottom: 1rem;
-      font-size: 1.05rem;
-      line-height: 1.6;
+      font-size: 1.1rem;
     }
     form input,
     form textarea,
@@ -69,49 +47,35 @@
       width: 100%;
       padding: 0.75rem;
       margin-bottom: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 6px;
       font-size: 1rem;
     }
     form button {
       background-color: #1f1f2e;
-      color: #fff;
+      color: white;
       border: none;
       cursor: pointer;
-      transition: background 0.3s ease;
     }
     form button:hover {
       background-color: #00d0ff;
-      color: #000;
+      color: black;
     }
     footer {
       background-color: #1f1f2e;
-      color: #fff;
+      color: white;
       text-align: center;
-      padding: 1.5rem 1rem;
+      padding: 1rem;
       margin-top: 3rem;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    @keyframes slideDown {
-      from { transform: translateY(-100%); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
     }
   </style>
 </head>
 <body>
-  <header>
+  
+<header style="position: relative;">
+  <img src="banner.png" alt="Banner" style="width: 100%; height: auto;">
+  <img src="logo.png" alt="PrintVision Logo" style="position: absolute; top: 50%; left: 50%;
+       transform: translate(-50%, -50%); max-width: 220px;">
+</header>
 
-<div style='max-height:250px; overflow:hidden;'>
-  <img src='printer-header.png' alt='3D Printer Banner' style='width:100%; object-fit:cover;'>
-</div>
-<img src='logo.png' alt='PrintVision Logo' style='max-width:220px; margin-top:1rem; display:block; margin-left:auto; margin-right:auto;'>
-
-    <h1>PrintVision</h1>
-    <p>From idea to reality — where concepts take form.</p>
-  </header>
   <nav>
     <a href="index.html">Home</a>
     <a href="products.html">Products</a>
@@ -123,7 +87,6 @@
     
 <h2>Welcome to PrintVision</h2>
 <p>I model it. I print it. You just say Yalla.</p>
-
 <h2 style="margin-top: 3rem;">Custom Orders</h2>
 <p>Need something special printed? Fill out the form below and we’ll make it real.</p>
 <form>
