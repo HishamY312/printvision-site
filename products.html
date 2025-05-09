@@ -6,74 +6,91 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Products - PrintVision</title>
   <style>
-    body {
+    * {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
-      color: #333;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background-color: #f8f9fb;
+      color: #2c2c2c;
     }
     nav {
       display: flex;
       justify-content: center;
       gap: 2rem;
-      background-color: #2a2a3d;
+      background-color: #1f1f2e;
       padding: 1rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
     nav a {
       color: #fff;
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      transition: color 0.3s ease;
     }
     nav a:hover {
-      color: #00d0ff;
+      color: #00cfff;
     }
     main {
-      max-width: 900px;
+      max-width: 1000px;
       margin: 2rem auto;
-      padding: 0 1rem;
+      padding: 0 1.5rem;
     }
     h2 {
-      margin-bottom: 1rem;
       font-size: 2rem;
-      color: #1f1f2e;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #00cfff;
+      display: inline-block;
+      padding-bottom: 0.3rem;
     }
     p {
       margin-bottom: 1rem;
-      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+    form {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
     }
     form input,
-    form textarea,
-    form button {
+    form textarea {
       width: 100%;
       padding: 0.75rem;
       margin-bottom: 1rem;
       font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
     }
     form button {
       background-color: #1f1f2e;
       color: white;
       border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 4px;
       cursor: pointer;
     }
     form button:hover {
-      background-color: #00d0ff;
-      color: black;
+      background-color: #00cfff;
+      color: #000;
     }
     footer {
       background-color: #1f1f2e;
       color: white;
       text-align: center;
-      padding: 1rem;
+      padding: 1.5rem 1rem;
       margin-top: 3rem;
     }
   </style>
 </head>
 <body>
   
-<header style="position: relative;">
-  <img src="banner.png" alt="Banner" style="width: 100%; height: auto;">
-  <img src="logo.png" alt="PrintVision Logo" style="position: absolute; top: 50%; left: 50%;
-       transform: translate(-50%, -50%); max-width: 220px;">
+<header style="width: 100%;">
+  <img src="header-final.png" alt="PrintVision Header" style="width: 100%; height: auto; display: block;" />
 </header>
 
   <nav>
