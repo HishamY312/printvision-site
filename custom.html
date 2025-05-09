@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Custom Orders - PrintVision</title>
+  <title>Custom - PrintVision</title>
   <style>
     * {
       margin: 0;
@@ -103,8 +103,12 @@
 </head>
 <body>
   <header>
-<img src='printer-header.png' alt='3D Printer' style='max-width:100%; height:auto; border-bottom: 3px solid #00d0ff;'>
-<img src='logo.png' alt='PrintVision Logo' style='max-width:120px; margin-top:1rem;'>
+
+<div style='max-height:250px; overflow:hidden;'>
+  <img src='printer-header.png' alt='3D Printer Banner' style='width:100%; object-fit:cover;'>
+</div>
+<img src='logo.png' alt='PrintVision Logo' style='max-width:220px; margin-top:1rem; display:block; margin-left:auto; margin-right:auto;'>
+
     <h1>PrintVision</h1>
     <p>From idea to reality — where concepts take form.</p>
   </header>
@@ -116,14 +120,17 @@
     <a href="contact.html">Contact</a>
   </nav>
   <main>
-    <h2>Custom Orders</h2>
-        <form>
-          <input type="text" placeholder="Your Name" required />
-          <input type="email" placeholder="Your Email" required />
-          <input type="tel" placeholder="Phone (optional)" />
-          <textarea placeholder="Describe your custom order" rows="5" required></textarea>
-          <button type="submit">Submit</button>
-        </form>
+    
+<h2>Custom Orders</h2>
+<p>Fill out the form below to tell us what you need, and we’ll get back to you ASAP.</p>
+<form>
+  <input type="text" placeholder="Your Name" required />
+  <input type="email" placeholder="Your Email" required />
+  <input type="tel" placeholder="Phone (optional)" />
+  <textarea placeholder="Describe your custom order" rows="5" required></textarea>
+  <button type="submit">Submit</button>
+</form>
+
   </main>
   <footer>
     <p>&copy; 2025 PrintVision. All rights reserved.</p>
