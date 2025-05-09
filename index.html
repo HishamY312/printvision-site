@@ -103,8 +103,10 @@
 </head>
 <body>
   <header>
-<img src='printer-header.png' alt='3D Printer' style='max-width:100%; height:auto; border-bottom: 3px solid #00d0ff;'>
-<img src='logo.png' alt='PrintVision Logo' style='max-width:120px; margin-top:1rem;'>
+    <div style='max-height:250px; overflow:hidden;'>
+      <img src='printer-header.png' alt='3D Printer Banner' style='width:100%; object-fit:cover;'>
+    </div>
+    <img src='logo.png' alt='PrintVision Logo' style='max-width:220px; margin-top:1rem; display:block; margin-left:auto; margin-right:auto;'>
     <h1>PrintVision</h1>
     <p>From idea to reality — where concepts take form.</p>
   </header>
@@ -119,8 +121,16 @@
     
 <h2>Welcome to PrintVision</h2>
 <p>I model it. I print it. You just say Yalla.</p>
-<h3 style="margin-top:2rem;">Need Something Custom?</h3>
-<p><a href='custom.html'>Click here to place a custom order</a> — just tell us what you want and we’ll make it happen.</p>
+
+<h2 style="margin-top: 3rem;">Custom Orders</h2>
+<p>Need something special printed? Fill out the form below and we’ll make it real.</p>
+<form>
+  <input type="text" placeholder="Your Name" required />
+  <input type="email" placeholder="Your Email" required />
+  <input type="tel" placeholder="Phone (optional)" />
+  <textarea placeholder="Describe your custom order" rows="5" required></textarea>
+  <button type="submit">Submit</button>
+</form>
 
   </main>
   <footer>
