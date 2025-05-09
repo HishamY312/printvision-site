@@ -18,22 +18,16 @@
       line-height: 1.6;
     }
     header {
-      background-color: #1f1f2e;
-      padding: 2rem 1rem;
+      background: url('printer-header.png') no-repeat center center;
+      background-size: cover;
+      color: white;
+      padding: 4rem 1rem;
       text-align: center;
     }
-    .header-image {
-      max-width: 100%;
-      height: auto;
-      display: block;
-      margin: 0 auto 1rem auto;
-      border-radius: 10px;
-    }
     .logo {
-      max-width: 120px;
+      max-width: 200px;
       height: auto;
-      display: inline-block;
-      margin: -3rem auto 1rem auto;
+      margin-bottom: 1rem;
       filter: drop-shadow(0 0 5px #00000088);
     }
     nav {
@@ -48,15 +42,6 @@
       color: white;
       text-decoration: none;
       font-size: 1rem;
-    }
-    .hero {
-      background-color: #ffffff;
-      padding: 3rem 1rem;
-      text-align: center;
-    }
-    .hero .container {
-      max-width: 800px;
-      margin: 0 auto;
     }
     section {
       padding: 2rem 1rem;
@@ -102,7 +87,6 @@
 </head>
 <body>
   <header>
-    <img src="printer-header.png" alt="3D Printer" class="header-image">
     <img src="logo.png" alt="PrintVision Logo" class="logo">
     <h1>PrintVision</h1>
     <p>Turning Ideas into Reality with 3D Printing</p>
@@ -117,11 +101,9 @@
   </nav>
 
   <section id="home" class="hero">
-    <div class="container">
-      <h2>Welcome to PrintVision</h2>
-      <p>From idea to reality — where concepts take form.</p>
-      <p>I model it. I print it. You just say Yalla.</p>
-    </div>
+    <h2>Welcome to PrintVision</h2>
+    <p>From idea to reality — where concepts take form.</p>
+    <p>I model it. I print it. You just say Yalla.</p>
   </section>
 
   <section id="products">
