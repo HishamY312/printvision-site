@@ -1,119 +1,31 @@
 
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Custom - PrintVision</title>
-  
-<style>
-  @media (max-width: 768px) {
-    header img {
-      max-height: 150px !important;
-    }
-  }
-</style>
-
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: 'Segoe UI', Tahoma, sans-serif;
-      background-color: #f8f9fb;
-      color: #2c2c2c;
-    }
-    nav {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      background-color: #1f1f2e;
-      padding: 1rem;
-    }
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    nav a:hover {
-      color: #00cfff;
-    }
-    main {
-      max-width: 600px;
-      margin: 2rem auto;
-      padding: 1rem;
-    }
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 1.5rem;
-    }
-    form {
-      background: white;
-      padding: 1.5rem;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
-    }
-    form input, form select, form button, form textarea {
-      width: 100%;
-      padding: 0.75rem;
-      margin-bottom: 1rem;
-      font-size: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-    form button {
-      background-color: #1f1f2e;
-      color: white;
-      border: none;
-      cursor: pointer;
-    }
-    form button:hover {
-      background-color: #00cfff;
-      color: black;
-    }
-    footer {
-      background-color: #1f1f2e;
-      color: white;
-      text-align: center;
-      padding: 1.5rem 1rem;
-      margin-top: 3rem;
-    }
-  </style>
-</head>
+<html><head><meta charset="UTF-8"><title>Custom Order</title></head>
 <body>
+  <h2>Custom Order</h2>
+  <form id="custom-form">
+    <input type="text" id="name" placeholder="Your Name" required><br>
+    <input type="email" id="email" placeholder="Your Email" required><br>
+    <input type="tel" id="phone" placeholder="Phone (optional)"><br>
+    <textarea id="details" placeholder="Describe your custom order" required></textarea><br>
+    <button type="submit">Submit</button>
+  </form>
+  <p id="custom-status"></p>
   
-<header style="width: 100%;">
-  <img src="banner.png" alt="PrintVision Banner" style="
-    width: 100%;
-    max-height: 250px;
-    object-fit: cover;
-    display: block;
-  " />
-</header>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+<script>
+  const supabase = supabase.createClient("https://icfyunclfbpohaphyzif.supabase.co", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImljZnl1bmNsZmJwb2hhcGh5emlmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDY4MjM0MDMsImV4cCI6MjA2MjM5OTQwM30.jopP7MxDjPiZtez3BPIy_Iy-SiqvUWPxOkssEZlEAIg");
+</script>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="products.html">Products</a>
-    <a href="about.html">About Us</a>
-    <a href="custom.html">Custom Orders</a>
-    <a href="contact.html">Contact</a>
-    <a href="login.html">Login</a>
-    <a href="signup.html">Sign Up</a>
-  </nav>
-  <main>
-    
-<h2>Custom Orders</h2>
-<p>Fill out the form below to tell us what you need, and we’ll get back to you ASAP.</p>
-<form>
-  <input type="text" placeholder="Your Name" required />
-  <input type="email" placeholder="Your Email" required />
-  <input type="tel" placeholder="Phone (optional)" />
-  <textarea placeholder="Describe your custom order" rows="5" required></textarea>
-  <button type="submit">Submit</button>
-</form>
-
-  </main>
-  <footer>
-    <p>&copy; 2025 PrintVision. All rights reserved.</p>
-  </footer>
-</body>
-</html>
+  <script>
+    document.getElementById('custom-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const phone = document.getElementById('phone').value;
+      const details = document.getElementById('details').value;
+      const { error } = await supabase.from('custom_orders').insert([{ name, email, phone, details }]);
+      document.getElementById('custom-status').textContent = error ? error.message : 'Order sent!';
+    });
+  </script>
+</body></html>
