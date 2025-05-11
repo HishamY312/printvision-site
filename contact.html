@@ -4,13 +4,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact Us</title>
+  <title>Contact</title>
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
       background-color: #f9f9f9;
       margin: 0;
-      padding: 0;
     }
     header img {
       width: 100%;
@@ -37,15 +36,15 @@
       margin: 2rem auto;
       padding: 2rem;
       background: white;
-      border-radius: 8px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
     }
     form input, form textarea, form button {
       width: 100%;
-      margin-bottom: 1rem;
       padding: 0.75rem;
+      margin-bottom: 1rem;
       font-size: 1rem;
-      border-radius: 6px;
+      border-radius: 4px;
       border: 1px solid #ccc;
     }
     form button {
@@ -68,7 +67,7 @@
   </style>
 </head>
 <body>
-<header><img src="banner.png" alt="PrintVision banner" /></header>
+<header><img src="banner.png" alt="Banner" /></header>
 <nav>
   <a href="index.html">Home</a>
   <a href="products.html">Products</a>
@@ -82,32 +81,50 @@
 
 <h2>Contact Us</h2>
 <form id="contact-form">
-  <input type="text" id="name" placeholder="Your Name" required>
-  <input type="email" id="email" placeholder="Your Email" required>
-  <input type="tel" id="phone" placeholder="Phone (optional)">
+  <input type="text" id="name" placeholder="Your Name" required />
+  <input type="email" id="email" placeholder="Your Email" required />
+  <input type="tel" id="phone" placeholder="Phone (optional)" />
   <textarea id="message" placeholder="Your Message" required></textarea>
   <button type="submit">Send</button>
 </form>
 <p id="contact-status"></p>
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
-<script>
-  const supabase = supabase.createClient("https://icfyunclfbpohaphyzif.supabase.co", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...");
-</script>
-
-<script>
-  document.getElementById('contact-form').addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const phone = document.getElementById('phone').value;
-    const message = document.getElementById('message').value;
-    const { error } = await supabase.from('contact_messages').insert([{ name, email, phone, message }]);
-    document.getElementById('contact-status').textContent = error ? error.message : 'Message sent!';
-  });
-</script>
-
 </main>
 <footer>&copy; 2025 PrintVision. All rights reserved.</footer>
-</body>
-</html>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+<script>
+  window.addEventListener("DOMContentLoaded", function () {
+    const supabase = supabase.createClient("https://icfyunclfbpohaphyzif.supabase.co", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...");
+
+    const contactForm = document.getElementById("contact-form");
+    if (contactForm) {
+      contactForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const phone = document.getElementById("phone").value;
+        const message = document.getElementById("message").value;
+        console.log("Submitting contact form...");
+        const { error } = await supabase.from("contact_messages").insert([{ name, email, phone, message }]);
+        document.getElementById("contact-status").textContent = error ? error.message : "Message sent!";
+        if (error) console.error(error);
+      });
+    }
+
+    const customForm = document.getElementById("custom-form");
+    if (customForm) {
+      customForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const phone = document.getElementById("phone").value;
+        const details = document.getElementById("details").value;
+        console.log("Submitting custom order...");
+        const { error } = await supabase.from("custom_orders").insert([{ name, email, phone, details }]);
+        document.getElementById("custom-status").textContent = error ? error.message : "Order sent!";
+        if (error) console.error(error);
+      });
+    }
+  });
+</script>
+</body></html>
